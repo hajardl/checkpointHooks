@@ -15,6 +15,10 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import Button from "@mui/material/Button";
+import Detail from "./Detail";
+import { Route } from 'react-router-dom'
+
+
 
 
 
@@ -117,8 +121,16 @@ function MovieCard() {
                 alt={element.title}
               />
 
-              <CardActions disableSpacing>
-                <a href={element.posterURL}>check</a>
+         
+           <CardActions disableSpacing>
+           <Route render={({ history}) => (
+                <button
+                  onClick={() => { history.push('/Detail') }}
+                >
+                  Click Me!
+                </button>
+              )} />
+              
               </CardActions>
             </Card>
           </div>
